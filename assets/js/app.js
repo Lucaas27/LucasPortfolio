@@ -18,7 +18,7 @@ const mobileView = () => {
 }
 
 // !HIDE MOBILE VIEW WHEN A LINK IS CLICKED
-const removeMobileView = e =>{
+const removeMobileView = e => {
     if (e.target.classList.contains('list-link')) {
         hamburger.classList.remove('mobile-menu');
         navList.classList.remove('slideDown');
@@ -26,28 +26,28 @@ const removeMobileView = e =>{
 }
 
 // !CHANGE LOGO DEPENDING ON THE THEME
-const changeLogo = () =>{
+const changeLogo = () => {
     if (logoImg.getAttribute('src') === './assets/images/logo_darkbg.png') {
-        logoImg.setAttribute('src','./assets/images/logo_lightbg.png');
+        logoImg.setAttribute('src', './assets/images/logo_lightbg.png');
     } else {
-        logoImg.setAttribute('src','./assets/images/logo_darkbg.png')       
+        logoImg.setAttribute('src', './assets/images/logo_darkbg.png');
     }
 }
 
 // !TOGGLE THEME AND STORE SELECTION IN LOCAL STORAGE
-const toggleTheme = ()=>{
+const toggleTheme = () => {
     body.classList.toggle('dark-theme');
     changeLogo();
     if (body.classList.contains('dark-theme')) {
         localStorage.setItem('darkTheme', 'active');
-    }else{
+    } else {
         localStorage.removeItem('darkTheme');
     }
 }
 
 // !CHECK IF THE DARK THEME IS ACTIVE
 (function checkTheme() {
-    if(currentTheme){
+    if (currentTheme) {
         changeLogo();
         body.classList.add('dark-theme');
     }
