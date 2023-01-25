@@ -1,23 +1,14 @@
 //!TOGGLE NAVIGATION MENU AND ICONS
 const menuToggleBtn = document.querySelector('.menu-toggle-button');
-const content = document.querySelector('#home');
-const closeBtn = document.querySelector('.close-icon');
-
-const openNavMenu = () => {
-    content.classList.add('active');
-    document.querySelector('.list').style.display = 'flex';
-}
-
-const closeNavMenu = () => {
-    content.classList.remove('active');
-    document.querySelector('.list').style.display = 'none';
-}
-
-menuToggleBtn.addEventListener('click', openNavMenu);
-closeBtn.addEventListener('click', closeNavMenu);
+const hamburger = document.querySelector('.hamburger');
+const navList = document.querySelector('.list');
+// let isOpen = false; //keep track of the current state of the navList element
 
 
-// !REMOVE ACTIVE CLASS FROM AND ICON ON LINK CLICK
+menuToggleBtn.addEventListener('click', () => {
+    hamburger.classList.toggle('mobile-menu');
+    navList.classList.toggle('slideDown');
+});
 
 // !TOGGLE THEME AND STORE SELECTION WITHIN LOCAL STORAGE
 
