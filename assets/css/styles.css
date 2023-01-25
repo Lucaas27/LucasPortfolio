@@ -36,7 +36,7 @@ body {
 	overflow-x: hidden;
 }
 
-body.dark.theme {
+body.dark-theme {
 	/* Swap the colors when the body has the class dark and theme */
 	--light-color: #363636;
 	--dark-color: #f3f3fe;
@@ -64,6 +64,8 @@ span {
 
 i {
 	font-size: 2.7rem;
+	pointer-events: none;
+
 }
 
 input,
@@ -121,7 +123,6 @@ textarea {
 
 .navbar .list {
 	position: absolute;
-	/* top: 0; */
 	left: 0;
 	flex-direction: column;
 	animation-fill-mode: forwards;
@@ -196,7 +197,7 @@ textarea {
 .navbar .icon-button .hamburger {
 	width: 2rem;
 	height: 0.2rem;
-	background-color: #fff;
+	background-color: var(--light-color);
 	border-radius: 5px;
 	position: relative;
 	pointer-events: none;
@@ -210,9 +211,9 @@ textarea {
 	right: 0px;
 	width: 2rem;
 	height: 0.2rem;
-	background: #fff;
 	border-radius: 0.5rem;
 	transition: all 0.5s ease;
+	background-color: var(--light-color);
 }
 
 .navbar .icon-button .hamburger::before {
@@ -227,7 +228,7 @@ textarea {
 	margin: auto;
 }
 
-.navbar .theme-on {
+.navbar .icon-button .theme-on { /* Initially the theme is off (no dark-theme class) - theme-on button is not toggled*/
 	display: none;
 }
 
@@ -245,14 +246,22 @@ textarea {
 	transform: rotate(-45deg) translate(3.5rem, 3.5rem);
 }
 
+.dark-theme .navbar .icon-button .theme-off{ /* The theme is on - theme-off button is not toggled*/
+	display: none;
+}
+
+.dark-theme .navbar .icon-button .theme-on{ /* The theme is on - theme-on button is toggled*/
+	display: block;
+}
+
 /* !HERO STYLES*/
-.main {
+.hero {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.main h1 {
+.hero h1 {
 	font-size: 5.6rem;
 	font-weight: 600;
 	color: #aaa;
