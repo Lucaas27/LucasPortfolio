@@ -82,11 +82,6 @@ textarea {
 	cursor: pointer;
 }
 
-/* 
-?RADIAL GRADIENT
-?background: radial-gradient(50% 50% at 50% 50%, rgba(255, 101, 118, .08) 0%, rgba(255, 101, 118, 0) 100%); 
-*/
-
 /* !REUSABLE CLASSES */
 .container {
 	max-width: var(--container-width);
@@ -110,6 +105,26 @@ section {
 	position: absolute;
 	background: url('../images/sparkle.png') center no-repeat;
 	background-size: cover;
+}
+
+.d-grid {
+	display: grid;
+}
+
+.section:not(.hero)::before {
+	content: '';
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80vw;
+	height: 80vw;
+	background: radial-gradient(
+		50% 50% at 50% 50%,
+		rgba(255, 101, 118, 0.08) 0%,
+		rgba(255, 101, 118, 0) 100%
+	);
+	z-index: -1;
 }
 
 /* !HEADER */
@@ -277,7 +292,6 @@ section {
 }
 
 /* !HERO STYLES*/
-
 .hero .title {
 	font-family: var(--title-font-family);
 	font-weight: 300;
@@ -337,8 +351,114 @@ section {
 	height: 5vw;
 	max-height: 5rem;
 }
-/* !ABOUT ME STYLES */
 
+.dark-theme .sparkles-alt::after {
+	content: '';
+	position: absolute;
+	top: 45%;
+	background: url('../images/sparkle_alt_light.png') center no-repeat;
+	background-size: cover;
+	width: 5vw;
+	max-width: 5rem;
+	height: 5vw;
+	max-height: 5rem;
+}
+
+/* !ABOUT ME STYLES */
+.about .section-description {
+	gap: 2.5rem;
+	margin-bottom: 2.5rem;
+}
+.about .section-description .description {
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+.about .description-image {
+	width: 25rem;
+	height: 25rem;
+	margin: 0 auto;
+}
+
+.about .description-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.about .description-image.sparkles::before,
+.about .description-image.sparkles::after {
+	width: 2rem;
+	height: 2rem;
+}
+
+.about .description-image.sparkles::before {
+	top: 5rem;
+	right: -1rem;
+}
+
+.about .description-image.sparkles::after {
+	bottom: 2rem;
+	left: -1rem;
+}
+
+.about .tech-stack {
+	max-width: 50rem;
+	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+	gap: 3rem;
+}
+
+.about .tech-stack .tech-stack-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.about .tech-stack .tech-stack-item i {
+	font-size: 5rem;
+	opacity: 0.5;
+}
+
+.dark-theme .about .tech-stack .tech-stack-item i {
+	opacity: 0.8;
+}
+
+.about .tech-stack .tech-stack-item::before,
+.about .tech-stack .tech-stack-item::after {
+	position: absolute;
+	top: -1rem;
+	opacity: 0;
+	transform: translateY(-100%);
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+.about .tech-stack .tech-stack-item::before {
+	content: '';
+	border: 1rem solid transparent;
+	border-top-color: var(--dark-color);
+	transform: translateY(0);
+	z-index: 5;
+}
+
+.about .tech-stack .tech-stack-item::after {
+	content: attr(data-tooltip);
+	width: max-content;
+	background: var(--dark-color);
+	color: var(--light-color);
+	padding: 0.5rem 1rem;
+	border-radius: 0.4rem;
+}
+
+.about .tech-stack .tech-stack-item:hover::before {
+	opacity: 1;
+	transform: translateY(-0.6rem);
+}
+
+.about .tech-stack .tech-stack-item:hover::after {
+	opacity: 1;
+	transform: translateY(calc(-100% + -0.5rem));
+}
 /* !PORTFOLIO STYLES */
 
 /* !CONTACT STYLES */
@@ -382,6 +502,11 @@ section {
 	.navbar .list .list-link:hover,
 	.navbar .list .list-link:focus {
 		letter-spacing: 0;
+	}
+
+	.hero .main-title .inline-image {
+		width: 10rem;
+		height: 10rem;
 	}
 }
 @media (min-width: 1025px) {

@@ -25,19 +25,19 @@ const removeMobileView = e => {
     }
 }
 
-// !CHANGE LOGO DEPENDING ON THE THEME
-const changeLogo = () => {
-    if (logoImg.getAttribute('src') === './assets/images/logo_darkbg.png') {
-        logoImg.setAttribute('src', './assets/images/logo_lightbg.png');
+// !CHANGE PICTURE DEPENDING ON THE THEME
+const changePic = (darkPic, lightPic) => {
+    if (logoImg.getAttribute('src') === darkPic) {
+        logoImg.setAttribute('src', lightPic);
     } else {
-        logoImg.setAttribute('src', './assets/images/logo_darkbg.png');
+        logoImg.setAttribute('src', darkPic);
     }
 }
 
 // !TOGGLE THEME AND STORE SELECTION IN LOCAL STORAGE
 const toggleTheme = () => {
     body.classList.toggle('dark-theme');
-    changeLogo();
+    changePic('./assets/images/logo_darkbg.png', './assets/images/logo_lightbg.png');
     if (body.classList.contains('dark-theme')) {
         localStorage.setItem('darkTheme', 'active');
     } else {
@@ -48,7 +48,7 @@ const toggleTheme = () => {
 // !CHECK IF THE DARK THEME IS ACTIVE
 (function checkTheme() {
     if (currentTheme) {
-        changeLogo();
+        changePic('./assets/images/logo_darkbg.png', './assets/images/logo_lightbg.png');
         body.classList.add('dark-theme');
     }
 })();
