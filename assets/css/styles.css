@@ -1,7 +1,7 @@
-/* !FONTS */
+/***************** !FONTS *****************/
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap');
 
-/* !BASE STYLES/RESET */
+/***************** !BASE STYLES/RESET *****************/
 
 :root {
 	--light-color: #f3f3fe;
@@ -12,7 +12,7 @@
 	--body-font-family: 'Poppins', 'sans-serif';
 	--container-padding: 1.5rem;
 	--container-width: 96rem;
-	--section-vertical-spacing: 8rem;
+	--section-vertical-spacing: 16rem;
 }
 
 *,
@@ -82,7 +82,7 @@ textarea {
 	cursor: pointer;
 }
 
-/* !REUSABLE CLASSES */
+/*****************!REUSABLE CLASSES *****************/
 .container {
 	max-width: var(--container-width);
 	margin: 0 auto;
@@ -92,6 +92,12 @@ textarea {
 section {
 	padding-block: var(--section-vertical-spacing);
 	position: relative;
+}
+
+.title {
+	font-family: var(--title-font-family);
+	font-weight: 300;
+	text-transform: uppercase;
 }
 
 .sparkles,
@@ -127,7 +133,36 @@ section {
 	z-index: -1;
 }
 
-/* !HEADER */
+.button-fill {
+	overflow: hidden;
+}
+
+.button-fill::before {
+	content: '';
+	height: 100%;
+	width: 100%;
+	background-color: var(--dark-color);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transform: scale(0);
+	transition: transform 0.5s cubic-bezier(0.78, 0.135, 0.15, 0.86);
+	border-radius: 50%;
+}
+
+.button-fill:hover::before,
+.button-fill:focus::before {
+	transform: scale(1);
+	transform-origin: bottom left;
+}
+
+.button-fill:hover,
+.button-fill:focus {
+	color: var(--light-color);
+}
+
+/***************** !HEADER *****************/
 
 .header {
 	margin-bottom: 5rem;
@@ -267,7 +302,7 @@ section {
 	display: none;
 }
 
-/* !JAVASCRIPT STYLES */
+/***************** !JAVASCRIPT STYLES *****************/
 .navbar .icon-button .hamburger.mobile-menu {
 	transform: translateX(-5rem);
 	background: transparent;
@@ -291,12 +326,7 @@ section {
 	display: block;
 }
 
-/* !HERO STYLES*/
-.hero .title {
-	font-family: var(--title-font-family);
-	font-weight: 300;
-	text-transform: uppercase;
-}
+/***************** !HERO STYLES *****************/
 
 .hero .main-title {
 	font-size: clamp(5rem, 10vw, 10rem);
@@ -364,14 +394,16 @@ section {
 	max-height: 5rem;
 }
 
-/* !ABOUT ME STYLES */
+/***************** !ABOUT ME STYLES *****************/
 .about .section-description {
 	gap: 2.5rem;
 	margin-bottom: 2.5rem;
 }
+
 .about .section-description .description {
 	text-transform: uppercase;
 	font-weight: 300;
+	text-align: center;
 }
 
 .about .description-image {
@@ -403,7 +435,7 @@ section {
 }
 
 .about .tech-stack {
-	max-width: 50rem;
+	/* max-width: 50rem; */
 	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
 	gap: 3rem;
 }
@@ -459,7 +491,136 @@ section {
 	opacity: 1;
 	transform: translateY(calc(-100% + -0.5rem));
 }
-/* !PORTFOLIO STYLES */
+/***************** !PORTFOLIO STYLES *****************/
+
+.portfolio .section-title-container {
+	display: inline-block;
+	margin-bottom: 5rem;
+}
+
+.portfolio .section-title {
+	font-size: clamp(4rem, 10vw, 8rem);
+}
+
+.portfolio .section-subtitle-container {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	column-gap: 1.5rem;
+}
+
+.portfolio .section-subtitle-container .subtitle-icon i {
+	width: 5rem;
+	height: 5rem;
+	border: 2px solid var(--dark-color);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.portfolio .section-subtitle-container .subtitle-icon.sparkles::before {
+	width: 1rem;
+	height: 1rem;
+}
+
+.portfolio .section-subtitle-container .subtitle-icon.sparkles::after {
+	width: 1rem;
+	height: 1rem;
+}
+
+.portfolio .section-subtitle-container .subtitle-icon.sparkles::before {
+	top: -0.5rem;
+	right: -0.5rem;
+}
+
+.portfolio .section-subtitle-container .subtitle-icon.sparkles::after {
+	bottom: -0.5rem;
+	left: -0.5rem;
+}
+
+.portfolio .section-subtitle {
+	font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.portfolio .portfolio-cards {
+	gap: 2.5rem;
+	grid-template-columns: repeat(2, minmax(10rem, 1fr));
+}
+
+.portfolio .portfolio-cards .portfolio-card .card-image {
+	height: 30rem;
+	background-color: #c2c2c2;
+	margin-bottom: 2.5rem;
+	border-radius: 0.4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.25s;
+}
+
+.portfolio .portfolio-cards .portfolio-card .card-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	padding: 1rem;
+}
+
+.portfolio .portfolio-cards .portfolio-card:hover .card-image,
+.portfolio .portfolio-cards .portfolio-card:focus .card-image {
+	background-color: #ff7575;
+}
+
+.portfolio .portfolio-cards .portfolio-card .card-heading {
+	color: var(--dark-color);
+}
+
+.portfolio .portfolio-cards .portfolio-card .card-heading .card-title {
+	font-size: 2rem;
+}
+
+.portfolio .portfolio-cards .portfolio-card .card-heading .card-subtitle {
+	font-size: 1.4rem;
+	opacity: 0.8;
+}
+
+.portfolio .portfolio-cards .portfolio-card.large-button-container {
+	display: flex;
+}
+
+.portfolio
+	.portfolio-cards
+	.portfolio-card.large-button-container
+	.large-button {
+	width: 15rem;
+	height: 15rem;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 300;
+	font-family: var(--title-font-family);
+	font-size: 3rem;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.portfolio
+	.portfolio-cards
+	.portfolio-card.large-button-container
+	.button-fill {
+	position: relative;
+	outline: 2px solid var(--dark-color);
+	transition: color 0.25s;
+}
+
+.portfolio
+	.portfolio-cards
+	.portfolio-card.large-button-container
+	.button-fill::before {
+	border-radius: 50%;
+}
 
 /* !CONTACT STYLES */
 
