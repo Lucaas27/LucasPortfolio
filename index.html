@@ -21,16 +21,16 @@
                 </a>
                 <ul class="list container">
                     <li class="list-item">
-                        <a href="#" class="list-link">About</a>
+                        <a href="#about" class="list-link">About</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Portfolio</a>
+                        <a href="#portfolio" class="list-link">Portfolio</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Contact</a>
+                        <a href="#contact" class="list-link">Contact</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Knowledge Base</a>
+                        <a href="#blog" class="list-link">Knowledge Base</a>
                     </li>
                 </ul>
                 <button class="button menu-toggle-button icon-button" aria-label="nav-toggle" type="button">
@@ -47,16 +47,27 @@
             <div class="container">
                 <div class="title main-title">
                     Crea<span class="inline-image sparkles"></span>tive
-                    <span class="break"></span>
+                    <br>
                     Front-end
-                    <span class="break"></span>
+                    <br>
                     Develope<span class="sparkles-alt">r</span>
+                </div>
+                <div class="hero-group-buttons">
+                    <a href="#portfolio"><button class="button button-fill">Projects</button></a>
+                    <a href="#contact"><button class="button button-fill">Get in Touch!</button></a>
                 </div>
             </div>
         </section>
         <!-- !ABOUT SECTION -->
-        <section class="section about" id="about">
+        <section class="section about">
             <div class="container">
+                <div class="section-title-container" id="about">
+                    <h2 class="title section-title">About</h2>
+                    <div class="section-subtitle-container">
+                        <span class="subtitle-icon sparkles"><i class="bx bx-male"></i></span>
+                        <h5 class="title section-subtitle">me</h5>
+                    </div>
+                </div>
                 <div class="section-description d-grid">
                     <div class="scroll-reveal-left">
                        <p class="description"> 
@@ -93,10 +104,10 @@
             </div>
         </section>
         <!-- !PORTFOLIO SECTION -->
-        <section class="section portfolio" id="portfolio">
+        <section class="section portfolio">
             <div class="container">
 
-                <div class="section-title-container">
+                <div class="section-title-container" id="portfolio">
                     <h2 class="title section-title">Portfolio</h2>
                     <div class="section-subtitle-container">
                         <span class="subtitle-icon sparkles"><i class="bx bx-code-alt"></i></span>
@@ -166,9 +177,91 @@
                 </div>
             </div>
         </section>
+        <!-- !BLOG SECTION -->
+        <section class="section blog">
+            <div class="container">
+                <div class="section-title-container" id="blog">
+                    <h2 class="title section-title">Knowledge</h2>
+                    <div class="section-subtitle-container">
+                        <span class="subtitle-icon sparkles"><i class="bx bx-book-open"></i></span>
+                        <h5 class="title section-subtitle">Base</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- !CONTACT SECTION -->
-        <!-- If <span class="text-bold">you</span> would like to work <span class="text-bold">together</span> on a <span class="text-bold">project</span>, please fill out the <span class="text-bold">form</span> below. I can't wait to turn your <span class="text-bold">ideas</span> into <span class="text-bold">reality</span>! -->
+        <section class="section contact">
+
+            <div class="container">
+                <div class="section-title-container" id="contact">
+                    <h2 class="title section-title">Get in</h2>
+                    <div class="section-subtitle-container">
+                        <span class="subtitle-icon sparkles"><i class="bx bx-conversation"></i></span>
+                        <h5 class="title section-subtitle">touch</h5>
+                    </div>
+                </div>
+                <div class="section-description d-grid">
+                    <div class="scroll-reveal-left">
+                       <p class="description"> 
+                            If <strong>you</strong> would like to work <strong>together</strong> 
+                            on a <strong>project</strong>, please fill out the <strong >form</strong> below. 
+                            I can't wait to turn your <strong>ideas</strong> into <strong>reality</strong></span>!
+                        </p>
+                    </div>
+                    <div class="scroll-reveal-right">
+                        <div class="description-image sparkles">
+                            <img src="./assets/images/contact.svg" alt="contact-me-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <form action="" class="contact-form">
+                        <div class="input-group">
+                            <div class="input">
+                                <input type="text" id="name" required>
+                                <label for="name" class="input-label">Name<span class="required-field">*</span></label>
+                            </div>
+    
+                            <div class="input">
+                                <input type="text" id="email" required>
+                                <label for="email" class="input-label">Email<span class="required-field">*</span></label>
+                            </div>
+                        </div>
+
+                        <div class="input">
+                            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                            <label for="message" class="input-label">Message<span class="required-field">*</span></label>
+                        </div>
+
+                        <button type="submit" class="button form-button button-fill">Send Message</button>
+
+                    </form>
+                </div>
+
+            </div>
+            
+        </section>
         <!-- !FOOTER -->
+        <footer class="footer">
+            <div class="footer-container container">
+                <div class="social-media">
+                    <ul class="list">
+                        <li class="list-item">
+                            <a href="#" class="list-link">
+                                <i class="bx bxl-github"></i>
+                            </a>
+                            <a href="#" class="list-link">
+                                <i class="bx bxl-linkedin-square"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <span>&copy; Lucas Gomes. All rights reserved</span>
+                <a href="#home" class="scroll-top">
+                    <i class="bx bx-chevron-up">Back to the top</i>
+                </a>
+            </div>
+        </footer>
         <!-- !MY SCRIPT -->
         <script src="./assets/js/app.js"></script>
     </body>

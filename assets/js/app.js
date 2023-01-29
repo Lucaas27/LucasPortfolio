@@ -15,13 +15,16 @@ const currentTheme = localStorage.getItem('darkTheme');
 const mobileView = () => {
     hamburger.classList.toggle('mobile-menu');
     navList.classList.toggle('slideDown');
+    body.style.overflowY = body.style.overflowY === 'hidden' ? 'visible' : 'hidden'; // if current styling is *hidden* then change to visible, otherwise change to hidden
+
 }
 
 // !HIDE MOBILE VIEW WHEN A LINK IS CLICKED
 const removeMobileView = e => {
-    if (e.target.classList.contains('list-link')) {
+    if (e.target.classList.contains('list-link') && navList.classList.contains('slideDown')) {
         hamburger.classList.remove('mobile-menu');
         navList.classList.remove('slideDown');
+        body.style.overflowY = body.style.overflowY === 'hidden' ? 'visible' : 'hidden'; // if current styling is *hidden* then change to visible, otherwise change to hidden
     }
 }
 
