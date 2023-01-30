@@ -192,6 +192,7 @@ section {
 	height: 5rem;
 	border: 2px solid var(--dark-color);
 	border-radius: 50%;
+	-webkit-border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -340,6 +341,7 @@ section {
 	background-color: var(--dark-color);
 	color: var(--light-color);
 	border-radius: 0.4rem;
+	-webkit-border-radius: 0.4rem;
 }
 
 .navbar .theme-toggle-button {
@@ -368,6 +370,7 @@ section {
 	height: 0.2rem;
 	background-color: var(--light-color);
 	border-radius: 5px;
+	-webkit-border-radius: 5px;
 	position: relative;
 	pointer-events: none;
 	transition: all 0.5s ease;
@@ -380,7 +383,8 @@ section {
 	right: 0px;
 	width: 2rem;
 	height: 0.2rem;
-	border-radius: 0.5rem;
+	border-radius: 0.4rem;
+	-webkit-border-radius: 0.4rem;
 	transition: all 0.5s ease;
 	background-color: var(--light-color);
 }
@@ -453,6 +457,7 @@ section {
 	margin: 0 auto;
 	display: inline-block;
 	border-radius: 0.4rem;
+	-webkit-border-radius: 0.4rem;
 	font-size: clamp(1rem, 4vw, 1.5rem);
 }
 
@@ -472,6 +477,7 @@ section {
 	background: url('../images/statue_hero.png') top center no-repeat;
 	background-size: cover;
 	border-radius: 50%;
+	-webkit-border-radius: 50%;
 	border-bottom-left-radius: 0;
 	margin: 0 1.5rem;
 }
@@ -570,6 +576,7 @@ section {
 	color: var(--light-color);
 	padding: 0.5rem 1rem;
 	border-radius: 0.4rem;
+	-webkit-border-radius: 0.4rem;
 }
 
 .about .tech-stack .tech-stack-item:hover::before {
@@ -593,6 +600,7 @@ section {
 	background-color: #c2c2c2;
 	margin-bottom: 2.5rem;
 	border-radius: 0.4rem;
+	-webkit-border-radius: 0.4rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -626,6 +634,8 @@ section {
 
 .portfolio .portfolio-cards .portfolio-card.large-button-container {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .portfolio
@@ -635,6 +645,7 @@ section {
 	width: 15rem;
 	height: 15rem;
 	border-radius: 50%;
+	-webkit-border-radius: 50%;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -651,6 +662,7 @@ section {
 	.portfolio-card.large-button-container
 	.button-fill::before {
 	border-radius: 50%;
+	-webkit-border-radius: 50%;
 }
 
 /***************** !CONTACT STYLES *****************/
@@ -699,6 +711,7 @@ section {
 	text-transform: uppercase;
 	margin: 0 auto;
 	border-radius: 0.4rem;
+	-webkit-border-radius: 0.4rem;
 }
 
 .required-field {
@@ -821,4 +834,20 @@ section {
 }
 @media (min-width: 1281px) {
 	/* hi-res laptops and desktops */
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
