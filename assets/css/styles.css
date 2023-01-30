@@ -316,14 +316,16 @@ section {
 	transition: all 0.2s ease-out;
 }
 
-.navbar .list .list-link {
+.list .list-link {
 	text-transform: uppercase;
 	font-size: 1.4rem;
 	color: var(--dark-color);
 }
 
-.navbar .list .list-link:hover,
-.navbar .list .list-link:focus {
+.list .list-link:hover,
+.list .list-link:focus,
+.scroll-top:hover,
+.scroll-top:focus {
 	opacity: 0.5;
 	letter-spacing: 2px;
 }
@@ -465,8 +467,8 @@ section {
 }
 
 .hero .main-title .inline-image {
-	width: 7rem;
-	height: 7rem;
+	width: 10rem;
+	height: 10rem;
 	background: url('../images/statue_hero.png') top center no-repeat;
 	background-size: cover;
 	border-radius: 50%;
@@ -704,11 +706,43 @@ section {
 	color: #ff7575;
 	transform: translateY(-0.8rem);
 }
-/* !FOOTER STYLES */
+/***************** !FOOTER STYLES *****************/
+.footer-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	border-top: 1px solid var(--border-top-color);
+	padding-top: 5rem;
+	padding-bottom: 1.5rem;
+}
+.scroll-top i {
+	font-size: 1.6rem;
+}
 
-/* !SCROLLBAR */
+.scroll-top {
+	display: flex;
+	align-items: center;
+	color: var(--dark-color);
+}
 
-/* !MEDIA QUERIES */
+/***************** !SCROLLBAR *****************/
+::-webkit-scrollbar {
+	width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--dark-color);
+}
+::-webkit-scrollbar-thumb {
+	background-color: #c2c2c2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #ff7575;
+}
+/***************** !MEDIA QUERIES *****************/
 @media (min-width: 320px) {
 	/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 }
@@ -718,7 +752,7 @@ section {
 @media (min-width: 600px) {
 	/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
 }
-@media (min-width: 801px) {
+@media (min-width: 768px) {
 	/* tablet, landscape iPad, lo-res laptops ands desktops */
 	.navbar .list {
 		position: static;
@@ -740,18 +774,46 @@ section {
 		display: none;
 	}
 
-	.navbar .list .list-link:hover,
-	.navbar .list .list-link:focus {
+	.list .list-link:hover,
+	.list .list-link:focus,
+	.scroll-top:hover,
+	.scroll-top:focus {
 		letter-spacing: 0;
 	}
 
 	.hero .main-title .inline-image {
-		width: 10rem;
-		height: 10rem;
+		width: 15rem;
+		height: 15rem;
 	}
 
 	.hero-group-buttons .button {
 		padding: 1rem 2rem;
+	}
+	.section-description {
+		grid-template-columns: 1.5fr 1fr;
+		align-items: center;
+	}
+
+	.section-description .description {
+		font-size: 2.4rem;
+	}
+
+	.description-image,
+	.description-image img {
+		width: 30rem;
+		height: 30rem;
+	}
+
+	.input-group {
+		display: flex;
+		column-gap: 5rem;
+	}
+	.input {
+		width: 100%;
+	}
+
+	.footer-container {
+		padding-block: 5rem;
 	}
 }
 @media (min-width: 1025px) {
