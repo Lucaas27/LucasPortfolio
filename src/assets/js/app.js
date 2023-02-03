@@ -17,7 +17,7 @@ const mobileView = () => {
     navList.classList.toggle('slideDown');
     body.style.overflowY = body.style.overflowY === 'hidden' ? 'visible' : 'hidden'; // if current styling is *hidden* then change to visible, otherwise change to hidden
 
-}
+};
 
 // !HIDE MOBILE VIEW WHEN A LINK IS CLICKED
 const removeMobileView = e => {
@@ -26,7 +26,7 @@ const removeMobileView = e => {
         navList.classList.remove('slideDown');
         body.style.overflowY = body.style.overflowY === 'hidden' ? 'visible' : 'hidden'; // if current styling is *hidden* then change to visible, otherwise change to hidden
     }
-}
+};
 
 // !CHANGE PICTURE DEPENDING ON THE THEME
 const changePic = (darkPic, lightPic) => {
@@ -35,23 +35,23 @@ const changePic = (darkPic, lightPic) => {
     } else {
         logoImg.setAttribute('src', darkPic);
     }
-}
+};
 
 // !TOGGLE THEME AND STORE SELECTION IN LOCAL STORAGE
 const toggleTheme = () => {
     body.classList.toggle('dark-theme');
-    changePic('./assets/images/logo_darkbg.png', './assets/images/logo_lightbg.png');
+    changePic('../assets/images/logo_darkbg.png', '../assets/images/logo_lightbg.png');
     if (body.classList.contains('dark-theme')) {
         localStorage.setItem('darkTheme', 'active');
     } else {
         localStorage.removeItem('darkTheme');
     }
-}
+};
 
 // !CHECK IF THE DARK THEME IS ACTIVE
 (function checkTheme() {
     if (currentTheme) {
-        changePic('./assets/images/logo_darkbg.png', './assets/images/logo_lightbg.png');
+        changePic('../assets/images/logo_darkbg.png', '../assets/images/logo_lightbg.png');
         body.classList.add('dark-theme');
     }
 })();
@@ -66,7 +66,7 @@ menuToggleBtn.addEventListener('click', mobileView);
 document.addEventListener('click', removeMobileView);
 
 // !TOGGLE THEME AND STORE SELECTION WITHIN LOCAL STORAGE
-themeBtn.addEventListener('click', toggleTheme)
+themeBtn.addEventListener('click', toggleTheme);
 
 // !SCROLL REVEAL
 
@@ -79,12 +79,12 @@ const sr = ScrollReveal({
 sr.reveal(`.main-title, .hero-group-buttons`, { origin: 'top' });
 sr.reveal('.scroll-reveal-left', { origin: 'left' });
 sr.reveal('.scroll-reveal-right', { origin: 'right' });
-sr.reveal('.tech-stack-item', { interval: '250' });
+sr.reveal('.tech-stack-item', { interval: '200' });
 sr.reveal(`.section-title, .section-subtitle-container`, {
     origin: 'top',
-    interval: '250'
+    interval: '200'
 });
-sr.reveal('.portfolio-card', { interval: '500' });
+sr.reveal('.portfolio-card', { interval: '450' });
 sr.reveal(`.form-container, .footer`, {
     origin: 'top',
 });
