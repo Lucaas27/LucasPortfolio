@@ -11,6 +11,12 @@ const currentTheme = localStorage.getItem('darkTheme');
 
 /*************************** Functions ******************************/
 
+
+// !HIGHLIGHT JS
+hljs.highlightAll();
+hljs.addPlugin(new CopyButtonPlugin());
+
+
 // !SET UP MOBILE VIEW
 const mobileView = () => {
     hamburger.classList.toggle('mobile-menu');
@@ -40,7 +46,7 @@ const changePic = (darkPic, lightPic) => {
 // !TOGGLE THEME AND STORE SELECTION IN LOCAL STORAGE
 const toggleTheme = () => {
     body.classList.toggle('dark-theme');
-    changePic('../assets/images/logo_darkbg.png', '../assets/images/logo_lightbg.png');
+    changePic('/assets/images/logo_darkbg.png', '/assets/images/logo_lightbg.png');
     if (body.classList.contains('dark-theme')) {
         localStorage.setItem('darkTheme', 'active');
     } else {
@@ -51,7 +57,7 @@ const toggleTheme = () => {
 // !CHECK IF THE DARK THEME IS ACTIVE
 (function checkTheme() {
     if (currentTheme) {
-        changePic('../assets/images/logo_darkbg.png', '../assets/images/logo_lightbg.png');
+        changePic('/assets/images/logo_darkbg.png', '/assets/images/logo_lightbg.png');
         body.classList.add('dark-theme');
     }
 })();
@@ -85,6 +91,6 @@ sr.reveal(`.section-title, .section-subtitle-container`, {
     interval: '200'
 });
 sr.reveal('.portfolio-card', { interval: '450' });
-sr.reveal(`.form-container, .footer`, {
+sr.reveal(`.form-container`, {
     origin: 'top',
 });

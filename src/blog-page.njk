@@ -1,0 +1,103 @@
+---
+
+title: 'Blog'
+layout: 'base.njk'
+
+---
+<section class="section blog blog-hero">
+    <div class="container flow">
+        <div class="blog-hero-content flow">
+            <div class="section-description scroll-reveal-left d-grid">
+                <h1 class="section-title title">Welcome to my knowledge base!</h1>
+                <p class="description section-subtitle">I use this space to document my adventures with new technologies.
+                    <br><br>
+                    This was initially intended as a personal repository for how to's and tech definitions but I decided to share!
+                </p>
+                <div class="hero-group-buttons scroll-reveal-right">
+                    <a href="#all-articles" class="button button-fill text-center">Check my articles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="articles" id="all-articles">
+    <div class="container">
+        <div class="section-title-container">
+            <h2 class="title section-title scroll-reveal-left">Articles</h2>
+            <div class="section-subtitle-container">
+                <span class="subtitle-icon sparkles">
+                    <i class="bx bx-book-open"></i>
+                </span>
+                <h5 class="title section-subtitle">Resources</h5>
+            </div>
+        </div>
+        <div class="layout-articles d-grid">
+            <div class="sidebar">
+                <div class="sidebar-categories">
+                    <h5 class="card-title all">
+                        <a href="" class="button">View all</a>
+                    </h5>
+                    <h5 class="card-title apps">
+                        <a href="" class="button">Apps</a>
+                    </h5>
+                    <h5 class="card-title cloud">
+                        <a href="" class="button">Cloud</a>
+                    </h5>
+                    <h5 class="card-title databases">
+                        <a href="" class="button">Databases</a>
+                    </h5>
+                    <h5 class="card-title docker">
+                        <a href="" class="button">Docker</a>
+                    </h5>
+                    <h5 class="card-title infra">
+                        <a href="" class="button">Infrastructure</a>
+                    </h5>
+                    <h5 class="card-title kubernetes">
+                        <a href="" class="button">Kubernetes</a>
+                    </h5>
+                    <h5 class="card-title windows">
+                        <a href="" class="button">Windows</a>
+                    </h5>
+                    <h5 class="card-title linux">
+                        <a href="" class="button">Linux</a>
+                    </h5>
+                    <h5 class="card-title macos">
+                        <a href="" class="button">MacOs</a>
+                    </h5>
+                    <h5 class="card-title networking">
+                        <a href="" class="button">Networking</a>
+                    </h5>
+                    <h5 class="card-title programming">
+                        <a href="" class="button">Programming</a>
+                    </h5>
+                    <h5 class="card-title tools">
+                        <a href="" class="button">Tools</a>
+                    </h5>
+                    <h5 class="card-title misc">
+                        <a href="" class="button">Misc</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="list-articles">
+                {%- for post in collections.post | reverse -%}
+                    <article class="inner-part " data-category= {{ post.data.tags[1] }}>
+                        <div class="articles-card-content">
+                            <h3 class="blog-card-title">
+                                <a href="{{ post.url }}">{{ post.data.title }}</a>
+                            </h3>
+                            <p class="blog-card-meta">by <span>
+                                    <strong>{{ post.data.author }}</strong>
+                                </span> on <span>
+                                    <strong>{{ post.date | postDate }}</strong>
+                                </span>
+                            </p>
+                            <p class="blog-card-body">{{ post.data.description }}</p>
+                            <a href="{{ post.url }}" class="button button-fill blog-card-btn">Continue Reading</a>
+                        </div>
+                    </article>
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,40 @@
+---
+
+layout: 'base.njk'
+
+---
+
+<section class=" section main-article">
+    <div class="container">
+        <h1 class="text-center section-subtitle" id="articles">{{ title }}</h1>
+
+        {{ content | safe }}
+
+        {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
+        {% set nextPost = collections.post | getNextCollectionItem(page) %}
+
+        <div class="posts-nav-container">
+            {% if previousPost %}
+                <p class="posts-nav">
+                    <a href="{{ previousPost.url }}">
+                        <strong>
+                            <i class='bx bx-left-arrow-alt'></i>
+                        </strong>
+                        {{ previousPost.data.title }}
+                    </a>
+                </p>
+            {% endif %}
+            {% if nextPost %}
+                <p class="posts-nav">
+                    <a href="{{ nextPost.url }}">
+                        {{ nextPost.data.title }}
+                        <strong>
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </strong>
+                    </a>
+                </p>
+            {% endif %}
+        </div>
+    </div>
+
+</section>
