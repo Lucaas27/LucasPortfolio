@@ -2,6 +2,12 @@
 
 title: 'Blog'
 layout: 'base.njk'
+pagination:
+    data: collections.post
+    size: 6
+    alias: posts
+permalink: blog-page/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html
+
 
 ---
 <section class="section blog blog-hero">
@@ -80,7 +86,7 @@ layout: 'base.njk'
                 </div>
             </div>
             <div class="list-articles">
-                {%- for post in collections.post | reverse -%}
+                {%- for post in posts | reverse -%}
                     <article class="inner-part " data-category= {{ post.data.tags[1] }}>
                         <div class="articles-card-content">
                             <h3 class="blog-card-title">
@@ -97,6 +103,48 @@ layout: 'base.njk'
                         </div>
                     </article>
                 {%- endfor -%}
+                {% set totalPages = pagination.links.length %}
+                {% set current = pagination.pageNumber + 1 %}
+
+                {% if totalPages > 1 %}
+                    <nav class="posts-nav " role="navigation" aria-label="pagination">
+                        <ul class="posts-nav-container ">
+                            {# <li {% if current > 1 and page.url != pagination.href.first %} style = 'display:block' {% else %} style = 'display:none' {% endif %}>
+                                <!-- First Page. -->
+                                <a class="pagination-previous hoverable" 
+                                href="{{ pagination.href.first }}"
+                                rel="first">First</a>
+                            </li> #}
+                            <li>
+                                <!-- Previous Page. -->
+                                {% if pagination.href.previous %}
+                                    <a class="pagination-previous hoverable" href="{{ pagination.href.previous }}" rel="prev">Prev</a>
+                                {% else %}
+                                    <a class="pagination-previous" title="This is the first page" disabled>Prev</a>
+                                {% endif %}
+                            </li>
+                            <li disabled>
+                                <!-- Indicator Number. -->
+                                <a class="pagination-link" 
+                                    >Page: {{ current }} of {{ totalPages }}</a>
+                            </li>
+                            <li>
+                                <!-- Next Page. -->
+                                {% if pagination.href.next %}
+                                    <a class="pagination-next hoverable" href="{{ pagination.href.next }}" rel="next">Next</a>
+                                {% else %}
+                                    <a class="pagination-next" title="This is the last page" disabled>Next</a>
+                                {% endif %}
+                            </li>
+                            {# <li {%  if current != totalPages %} style = 'display:block' {% else %} style = 'display:none' {% endif %}>
+                                <!-- Last Page. -->
+                                <a class="pagination-next hoverable"
+                                href="{{ pagination.href.last }}"
+                                rel="last">Last</a>
+                            </li> #}
+                        </ul>
+                    </nav>
+                {% endif %}
             </div>
         </div>
     </div>
