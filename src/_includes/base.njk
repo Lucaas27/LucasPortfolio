@@ -20,7 +20,9 @@
 
     <body>
         {% include 'header.njk'%}
-        {{ content | safe }}
+        <main>
+            {{ content | safe }}
+        </main>
         {% include 'footer.njk' %}
     </body>
     <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>

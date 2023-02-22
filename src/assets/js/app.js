@@ -6,7 +6,9 @@ const hamburger = document.querySelector('.hamburger');
 const navList = document.querySelector('.list');
 const themeBtn = document.querySelector('.theme-toggle-button');
 const logoImg = document.querySelector('.logo-img');
+const catBtns = document.querySelectorAll('.catBtn');
 const currentTheme = localStorage.getItem('darkTheme');
+const postsNav = document.querySelector('.posts-nav');
 
 
 /*************************** Functions ******************************/
@@ -54,6 +56,38 @@ const toggleTheme = () => {
     }
 };
 
+//parameter passed from button (Parameter same as category)
+function filterPosts(cat) {
+    //Button class code
+    let buttons = document.querySelectorAll(".button-value");
+    buttons.forEach((button) => {
+        //check if value equals innerText
+        if (value.toUpperCase() == button.innerText.toUpperCase()) {
+            button.classList.add("active");
+        } else {
+            button.classList.remove("active");
+        }
+    });
+    //select all cards
+    let elements = document.querySelectorAll(".card");
+    //loop through all cards
+    elements.forEach((element) => {
+        //display all cards on 'all' button click
+        if (value == "all") {
+            element.classList.remove("hide");
+        } else {
+            //Check if element contains category class
+            if (element.classList.contains(value)) {
+                //display element based on category
+                element.classList.remove("hide");
+            } else {
+                //hide other elements
+                element.classList.add("hide");
+            }
+        }
+    });
+}
+
 // !CHECK IF THE DARK THEME IS ACTIVE
 (function checkTheme() {
     if (currentTheme) {
@@ -73,6 +107,35 @@ document.addEventListener('click', removeMobileView);
 
 // !TOGGLE THEME AND STORE SELECTION WITHIN LOCAL STORAGE
 themeBtn.addEventListener('click', toggleTheme);
+
+// !CATEGORY FILTER IN THE BLOG SECTION
+
+// catBtns.forEach(btn => {
+//     btn.addEventListener('click', (e) => {
+//         // e.preventDefault();
+//         let cat = btn.innerText.toUpperCase();
+//         console.log(cat);
+//         //select all cards
+//         let cards = document.querySelectorAll(".inner-part");
+//         //loop through all cards
+//         cards.forEach((element) => {
+//             //display all cards on 'all' button click
+//             if (cat === "View all".toUpperCase()) {
+//                 element.classList.remove("hide");
+//             } else {
+//                 //Check if element contains category class
+//                 if (element.dataset.category.toUpperCase() === cat) {
+//                     //display element based on category
+//                     element.classList.remove("hide");
+//                 } else {
+//                     //hide other elements
+//                     element.classList.add("hide");
+//                 }
+//             }
+//         });
+//         e.preventDefault();
+//     });
+// });
 
 // !SCROLL REVEAL
 
@@ -97,10 +160,10 @@ sr.reveal(`.form-container`, {
 
 // !RETURN TO THE POSITION AFTER REFRESH
 
-document.addEventListener("DOMContentLoaded", function (event) {
-    const scrollpos = localStorage.getItem("scrollpos");
-    if (scrollpos) window.scrollTo(0, scrollpos);
-});
+// document.addEventListener("DOMContentLoaded", function (event) {
+//     const scrollpos = localStorage.getItem("scrollpos");
+//     if (scrollpos) window.scrollTo(0, scrollpos);
+// });
 
 window.onscroll = function (e) {
     localStorage.setItem("scrollpos", window.scrollY);

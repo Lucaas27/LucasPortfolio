@@ -3,6 +3,7 @@ title: Bind9
 author: Lucas Gomes
 date: 2023-02-06
 tags: "apps"
+categories: "apps"
 description: Bind9 basics
 ---
 Bind9 is an open-source fully-featured DNS ([[dns]]) system.

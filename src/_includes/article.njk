@@ -1,5 +1,6 @@
 ---
 
+title: 'Lucas Gomes - {{ title }}'
 layout: 'base.njk'
 
 ---
@@ -10,12 +11,12 @@ layout: 'base.njk'
 
         {{ content | safe }}
 
-        {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
-        {% set nextPost = collections.post | getNextCollectionItem(page) %}
+        {% set previousPost = collections.articles | getPreviousCollectionItem(page) %}
+        {% set nextPost = collections.articles | getNextCollectionItem(page) %}
 
-        <div class="posts-nav-container">
+        <div class="post-nav-container">
             {% if previousPost %}
-                <p class="posts-nav">
+                <p class="post-nav">
                     <a href="{{ previousPost.url }}">
                         <strong>
                             <i class='bx bx-left-arrow-alt'></i>
@@ -25,7 +26,7 @@ layout: 'base.njk'
                 </p>
             {% endif %}
             {% if nextPost %}
-                <p class="posts-nav">
+                <p class="post-nav">
                     <a href="{{ nextPost.url }}">
                         {{ nextPost.data.title }}
                         <strong>

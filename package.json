@@ -20,5 +20,8 @@
   "homepage": "https://gitlab.com/Lucaas27/LucasPortfolio#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2"
+  },
+  "dependencies": {
+    "eleventy-plugin-dynamic-categories": "^0.1.4"
   }
 }

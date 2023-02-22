@@ -3,6 +3,7 @@ title: Argo CD
 author: Lucas Gomes
 date: 2023-02-06
 tags: "apps"
+categories: "apps"
 description: Argo CD basics
 ---
 

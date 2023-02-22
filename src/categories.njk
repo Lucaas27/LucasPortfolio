@@ -1,0 +1,60 @@
+---
+title: 'Articles'
+layout: 'base.njk'
+pagination:
+    data: collections
+    size: 1
+    alias: tag
+    addAllPagesToCollections: true
+eleventyComputed: 
+    title: Articles in the "{{ tag }}" category
+permalink: /articles/{{ tag | slugify }}/
+---
+
+<section class="articles" id="all-articles">
+    <div class="container">
+        <div class="section-title-container">
+            <div class="section-subtitle-container">
+                <span class="subtitle-icon sparkles">
+                    <i class="bx bx-book-open"></i>
+                </span>
+                <h5 class="title section-subtitle">{{title}}</h5>
+            </div>
+        </div>
+        <div class="layout-articles d-grid">
+            <div class="sidebar">
+                <div class="sidebar-categories">
+                    <h5 class="card-title">
+                        <a href="/articles#all-articles" class="button catBtn">All Articles</a>
+                    </h5>
+                    {% for category in collections.all | getAllTags | filterTagList %}
+                        {% set catUrl %}/articles/{{ category | slugify }}/{% endset %}
+                        <h5 class="card-title">
+                            <a href="{{catUrl}}" class="button catBtn">{{category}}</a>
+                        </h5>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="list-articles">
+                {% set articles = collections[tag] %}
+                {%- for article in articles | reverse -%}
+                    <article class="inner-part " data-category= {{ article.data.tags[1] }}>
+                        <div class="articles-card-content">
+                            <h3 class="blog-card-title">
+                                <a href="{{ article.url }}">{{ article.data.title }}</a>
+                            </h3>
+                            <p class="blog-card-meta">by <span>
+                                    <strong>{{ article.data.author }}</strong>
+                                </span> on <span>
+                                    <strong>{{ article.date | articleDate }}</strong>
+                                </span>
+                            </p>
+                            <p class="blog-card-body">{{ article.data.description }}</p>
+                            <a href="{{ article.url }}" class="button button-fill blog-card-btn">Continue Reading</a>
+                        </div>
+                    </article>
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</section>
