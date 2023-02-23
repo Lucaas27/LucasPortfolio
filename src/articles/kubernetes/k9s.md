@@ -7,7 +7,7 @@ categories: "infra"
 description: Kubernetes - K9s
 ---
 
-K9s is a command line interface to easy up managing Kubernetes([[kubernetes]]) clusters.
+K9s is a command line interface to easy up managing Kubernetes([kubernetes](kubernetes)) clusters.
 
 Core features of k9s are for instance:
 

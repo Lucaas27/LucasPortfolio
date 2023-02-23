@@ -8,4 +8,4 @@ description: tools
 ---
 
 
-**VSCode Shortcuts on MacOS ([[vscode-macos-shortcuts]])**
+**VSCode Shortcuts on MacOS ([vscode-macos-shortcuts](macos/vscode-macos-shortcuts.md))**

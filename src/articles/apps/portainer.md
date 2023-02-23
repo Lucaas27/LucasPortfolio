@@ -7,7 +7,7 @@ categories: "apps"
 description: Portainer basics
 ---
 
-Easily deploy, configure and secure containers in minutes on **Docker ([[docker]])**, **Kubernetes ([[kubernetes]])**, Swarm and Nomad in any cloud, datacenter or device.
+Easily deploy, configure and secure containers in minutes on **Docker ([docker](docker))**, **Kubernetes ([kubernetes](kubernetes))**, Swarm and Nomad in any cloud, datacenter or device.
 
 Project Homepage: <https://www.portainer.io>
 Documentation: <http://documentation.portainer.io>

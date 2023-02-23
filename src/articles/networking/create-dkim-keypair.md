@@ -6,7 +6,7 @@ tags: "networking"
 categories: "networking"
 description: networking
 ---
-We use the tool OpenSSL ([[openssl]]]) to generate a DKIM private and public keypair.
+We use the tool OpenSSL ([openssl](tools/openssl.md)]) to generate a DKIM private and public keypair.
 
 `openssl genrsa -out dkim_private.pem 2048`
 

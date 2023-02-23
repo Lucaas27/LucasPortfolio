@@ -7,7 +7,7 @@ categories: "tools"
 description: tools
 ---
 
-Direnv is an extension for your shell. It augments existing shells with a new feature that can load and unload environment variables ([[environment-variables-in-linux]]) depending on the current directory.
+Direnv is an extension for your shell. It augments existing shells with a new feature that can load and unload environment variables ([environment-variables-in-linux](linux/environment-variables-in-linux.md)) depending on the current directory.
 
 ---
 

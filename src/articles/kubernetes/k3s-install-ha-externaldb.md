@@ -10,7 +10,7 @@ description: Kubernetes
 
 ## Install Database
 
-Install MariaDB ([[mariadb]]).
+Install MariaDB ([mariadb](databases/mariadb.md)).
 
 ## Install Servers
 
