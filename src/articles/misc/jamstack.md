@@ -13,7 +13,7 @@ description: misc
 
 > "A modern web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup"
 
-![Pasted image 20230121195533.png](../_assets/Pasted%20image%2020230121195533.png)
+![jamstack1.png](/assets/articles_imgs/jamstack1.png)
 
 ### JavaScript
 
@@ -113,7 +113,7 @@ Your server is notified when a new build is required, typically via webhooks. Se
 
 Here's an ideal Jamstack workflow:
 
-![Pasted image 20230121194831.png](../_assets/Pasted%20image%2020230121194831.png)
+![jamstack.png](/assets/articles_imgs/jamstack.png)
 
 ---
 

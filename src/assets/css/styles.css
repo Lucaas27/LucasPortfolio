@@ -751,6 +751,10 @@ section {
 	/* line-height: 1.6; */
 	margin-top: 3rem;
 }
+
+.section.main-article a:not(.post-nav-container a) {
+	color: #ff7575;
+}
 .hljs-copy-wrapper {
 	position: relative;
 }
