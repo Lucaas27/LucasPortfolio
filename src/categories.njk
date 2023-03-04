@@ -37,7 +37,7 @@ permalink: /articles/{{ tag | slugify }}/
             </div>
             <div class="list-articles">
                 {% set articles = collections[tag] %}
-                {%- for article in articles | reverse -%}
+                {% for article in articles | reverse %}
                     <article class="inner-part " data-category= {{ article.data.tags[1] }}>
                         <div class="articles-card-content">
                             <h3 class="blog-card-title">
@@ -53,7 +53,7 @@ permalink: /articles/{{ tag | slugify }}/
                             <a href="{{ article.url }}" class="button button-fill blog-card-btn">Continue Reading</a>
                         </div>
                     </article>
-                {%- endfor -%}
+                {% endfor %}
             </div>
         </div>
     </div>

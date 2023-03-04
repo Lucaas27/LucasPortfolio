@@ -589,7 +589,7 @@ section {
 
 .portfolio .portfolio-cards {
 	gap: 2.5rem;
-	grid-template-columns: repeat(2, minmax(10rem, 1fr));
+	grid-template-columns: repeat(1, minmax(10rem, 1fr));
 }
 
 .portfolio .portfolio-cards .portfolio-card .card-image {
@@ -658,6 +658,65 @@ section {
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 }
+
+.modal {
+	display: none;
+}
+.modal.open {
+	display: block;
+}
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.modal .modal-contents {
+	border: 1px solid #ccc;
+	border-radius: 0.5rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* justify-content: space-around; */
+	gap: 2rem;
+	background: var(--light-color);
+	color: var(--dark-color);
+	z-index: 20;
+	overflow-y: scroll;
+}
+
+.modal-title {
+	margin: 5rem 0;
+}
+
+.modal-description {
+	flex: 0.5;
+}
+
+.modal-close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	cursor: pointer;
+}
+
+.modal-btn-group {
+	display: flex;
+	gap: 2rem;
+}
+.modal-btn-group > a {
+	padding: 0.5rem 1rem;
+	border-radius: 0.4rem;
+}
+
 /***************** !BLOG STYLES *****************/
 .text-center {
 	text-align: center;
@@ -818,6 +877,7 @@ section {
 [disabled] {
 	color: #c2c2c2;
 }
+
 /***************** !CONTACT STYLES *****************/
 .contact-form {
 	display: flex;
@@ -919,6 +979,13 @@ section {
 }
 @media (min-width: 600px) {
 	/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+	.modal .modal-contents {
+		width: 80%;
+		height: 80%;
+		top: 50vh;
+		left: 50vw;
+		transform: translate(-50%, -50%);
+	}
 }
 @media (min-width: 768px) {
 	/* tablet, landscape iPad, lo-res laptops ands desktops */
@@ -990,6 +1057,14 @@ section {
 	}
 	.input {
 		width: 100%;
+	}
+
+	.portfolio .portfolio-cards {
+		grid-template-columns: repeat(2, minmax(10rem, 1fr));
+	}
+
+	.portfolio .portfolio-card {
+		cursor: pointer;
 	}
 
 	.articles .layout-articles {

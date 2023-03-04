@@ -9,6 +9,10 @@ const logoImg = document.querySelector('.logo-img');
 const catBtns = document.querySelectorAll('.catBtn');
 const currentTheme = localStorage.getItem('darkTheme');
 const postsNav = document.querySelector('.posts-nav');
+let modal = document.querySelectorAll('.modal');
+const closeModal = document.querySelectorAll('.modal-close');
+const openModal = document.querySelectorAll('.open-modal');
+const overlay = document.querySelectorAll('.overlay');
 
 
 /*************************** Functions ******************************/
@@ -35,6 +39,11 @@ const removeMobileView = e => {
         body.style.overflowY = body.style.overflowY === 'hidden' ? 'visible' : 'hidden'; // if current styling is *hidden* then change to visible, otherwise change to hidden
     }
 };
+// !
+// const toggleModal = e => {
+//     modalContainer.style.display = 'block';
+//     body.style.overflowY = body.style.overflowY === 'hidden' ? 'visible' : 'hidden'; // if current styling is *hidden* then change to visible, otherwise change to hidden
+// };
 
 // !CHANGE PICTURE DEPENDING ON THE THEME
 const changePic = (darkPic, lightPic) => {
@@ -108,35 +117,6 @@ document.addEventListener('click', removeMobileView);
 // !TOGGLE THEME AND STORE SELECTION WITHIN LOCAL STORAGE
 themeBtn.addEventListener('click', toggleTheme);
 
-// !CATEGORY FILTER IN THE BLOG SECTION
-
-// catBtns.forEach(btn => {
-//     btn.addEventListener('click', (e) => {
-//         // e.preventDefault();
-//         let cat = btn.innerText.toUpperCase();
-//         console.log(cat);
-//         //select all cards
-//         let cards = document.querySelectorAll(".inner-part");
-//         //loop through all cards
-//         cards.forEach((element) => {
-//             //display all cards on 'all' button click
-//             if (cat === "View all".toUpperCase()) {
-//                 element.classList.remove("hide");
-//             } else {
-//                 //Check if element contains category class
-//                 if (element.dataset.category.toUpperCase() === cat) {
-//                     //display element based on category
-//                     element.classList.remove("hide");
-//                 } else {
-//                     //hide other elements
-//                     element.classList.add("hide");
-//                 }
-//             }
-//         });
-//         e.preventDefault();
-//     });
-// });
-
 // !SCROLL REVEAL
 
 const sr = ScrollReveal({
@@ -168,3 +148,55 @@ sr.reveal(`.form-container`, {
 window.onscroll = function (e) {
     localStorage.setItem("scrollpos", window.scrollY);
 };
+
+
+
+// MODAL
+
+// Generate the HTML code for the buttons and modals
+for (let i = 1; i < openModal.length; i++) {
+    // Append data-target to the open modal and close modal elements
+    openModal[i].setAttribute("data-target", "modal" + i);
+    closeModal[i].setAttribute("data-target", "modal" + i);
+    overlay[i].setAttribute("data-target", "modal" + i);
+    // Append id to the modal element
+    modal[i].setAttribute("id", "modal" + i);
+
+}
+
+const modalOpen = (b) => {
+    const modalId = b.getAttribute('data-target');
+    const targetModal = document.getElementById(modalId);
+    targetModal.classList.add('open');
+    body.style.overflowY = 'hidden';
+
+};
+
+const modalClose = (b) => {
+    const modalId = b.getAttribute('data-target');
+    const targetModal = document.getElementById(modalId);
+    targetModal.classList.remove('open');
+    body.style.overflowY = 'visible';
+
+};
+
+function attachEventListener(openModal, closeButtons, overlay) {
+    openModal.forEach(b => {
+        b.addEventListener('click', () => {
+            modalOpen(b);
+        });
+    });
+    closeButtons.forEach(b => {
+        b.addEventListener('click', () => {
+            modalClose(b);
+        });
+    });
+
+    overlay.forEach(o => {
+        o.addEventListener('click', () => {
+            modalClose(o);
+        });
+    });
+}
+
+attachEventListener(openModal, closeModal, overlay);
