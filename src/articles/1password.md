@@ -1,7 +1,9 @@
 ---
 title: 1Password
 author: Lucas Gomes
-tags: tools
+tags:
+  - tools
+  - articles
 date: 2023-03-05T18:14:10.926Z
 categories: tools
 description: tools
