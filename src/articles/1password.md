@@ -6,7 +6,7 @@ tags:
   - articles
 date: 2023-03-05T18:14:10.926Z
 categories: tools
-description: tools
+description: 1 password basic info
 image: /assets/images/lg-darkbg-1.png
 ---
 
