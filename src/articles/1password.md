@@ -1,10 +1,11 @@
 ---
 title: 1Password
 author: Lucas Gomes
-date: 2023-02-21
-tags: "tools"
-categories: "tools"
+tags: tools
+date: 2023-03-05T18:14:10.926Z
+categories: tools
 description: tools
+image: /assets/images/lg-darkbg-1.png
 ---
 
 1Password is a password manager that provides ability to store various passwords, important documents, secure notes and more.
