@@ -16,6 +16,7 @@
         <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
         <!-- !MY STYLESHEET -->
         <link rel="stylesheet" href="/assets/css/styles.css">
+        <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     </head>
 
     <body>
@@ -27,6 +28,21 @@
     </body>
     <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        if (window.netlifyIdentity) {
+            window
+                .netlifyIdentity
+                .on("init", user => {
+                    if (!user) {
+                        window
+                            .netlifyIdentity
+                            .on("login", () => {
+                                document.location.href = "/admin/";
+                            });
+                    }
+                });
+        }
+    </script>
     <!-- !MY SCRIPT -->
     <script src="/assets/js/app.js"></script>
 

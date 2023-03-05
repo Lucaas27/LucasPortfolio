@@ -5,6 +5,7 @@ date: 2023-02-21
 tags: "misc"
 categories: "misc"
 description: misc
+image: ["/assets/images/jamstack1.png","/assets/images/jamstack.png"]
 ---
 
 ## Definition
@@ -13,7 +14,7 @@ description: misc
 
 > "A modern web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup"
 
-![jamstack1.png](/assets/articles_imgs/jamstack1.png)
+![jamstack1.png]({{image[0]}})
 
 ### JavaScript
 
@@ -113,7 +114,7 @@ Your server is notified when a new build is required, typically via webhooks. Se
 
 Here's an ideal Jamstack workflow:
 
-![jamstack.png](/assets/articles_imgs/jamstack.png)
+![jamstack.png]({{image[1]}})
 
 ---
 
