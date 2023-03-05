@@ -13,13 +13,21 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - {
-          label: 'Category',
-          name: 'tags',
-          widget: 'list',
-          default: '["articles"]',
-        }
+      - { label: 'Category', name: 'tags', widget: 'list', default: 'articles' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Featured Image', name: 'image', widget: 'image' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'projects'
+    label: 'Projects'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    folder: 'src/projects'
+    fields:
+      - { label: 'Title', name: 'name', widget: 'string' }
+      - { label: 'Subtitle', name: 'subtitle', widget: 'string' }
+      - { label: 'Tech Used', name: 'tech', widget: 'list' }
+      - { label: 'Live Link', name: 'live', widget: 'string' }
+      - { label: 'GitHub Link', name: 'github', widget: 'string' }
+      - { label: 'Featured Image', name: 'image', widget: 'image' }
+      - { label: 'Description', name: 'description', widget: 'markdown' }

@@ -68,4 +68,4 @@ Most useful commands:
 
 It is possible to load secrets from 1Password directly to environment variables.
 It can be done by using 1Password CLI, which provides options to load secret values either to environment variable directly, or to `.env` file.
-For detailed instruction on how to set up process to load secrets from 1passwords, use to [the official documentation]([1Password-CLI](https://developer.1password.com/docs/cli/secrets-environment-variables/#step-1-create-secret-references)).
+For detailed instruction on how to set up process to load secrets from 1passwords, use to [the official documentation](https://developer.1password.com/docs/cli/secrets-environment-variables/#step-1-create-secret-references).

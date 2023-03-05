@@ -1,6 +1,6 @@
 ---
 
-title: 'Portfolio'
+title: 'Lucas Gomes - Portfolio'
 layout: 'base.njk'
 
 ---
@@ -97,51 +97,45 @@ layout: 'base.njk'
 
     <div class="portfolio-cards d-grid" aria-haspopup="dialog">
 
-        {% for key, val in projects %}
-            {% for entry in val %}
-                <div class="portfolio-card open-modal" data-target="modal">
-                    <div class="card-image">
-                        <img src="{{entry.image}}" alt="project-preview-image">
-                    </div>
-                    <div class="card-heading">
-                        <h5 class="card-title">{{entry.name}}</h5>
-                        <span class="card-subtitle">{{entry.subtitle}}</span>
-                    </div>
-
+        {% for entry in collections.projects %}
+            <div class="portfolio-card open-modal" data-target="modal">
+                <div class="card-image">
+                    <img src="{{entry.data.image}}" alt="project-preview-image">
                 </div>
-                <div class="modal" id="modal">
-                    <div class="overlay" data-target='modal'></div>
-                    <div class="modal-contents">
-                        <div class="modal-close" title="Close" data-target='modal'>
-                            <i class='bx bx-x'></i>
-                        </div>
+                <div class="card-heading">
+                    <h5 class="card-title">{{entry.data.name}}</h5>
+                    <span class="card-subtitle">{{entry.data.subtitle}}</span>
+                </div>
 
-                        <h3 class="modal-title">{{entry.name}}</h3>
-                        <div class="modal-description container">
-                            <p>
-                                {{entry.description}}
-                            </p>
-                            <p> Tech used : 
-                            {% for tech in entry.tech %}
-                                    {{tech}} /
-                            {% endfor %}
-                            </p>
+            </div>
+            <div class="modal" id="modal">
+                <div class="overlay" data-target='modal'></div>
+                <div class="modal-contents">
+                    <div class="modal-close" title="Close" data-target='modal'>
+                        <i class='bx bx-x'></i>
+                    </div>
 
-                        </div>
-                        <div class="modal-btn-group">
-                            <a href="{{entry.live}}" target="_blank" class="button button-fill" target="_blank">
+                    <h3 class="modal-title">{{entry.data.name}}</h3>
+                    <div class="modal-description container">
+                        <p>
+                            {{entry.data.description}}
+                        </p>
+                        <p></p>
+
+                    </div>
+                    <div class="modal-btn-group">
+                        <a href="{{entry.data.live}}" target="_blank" class="button button-fill" target="_blank">
                             View Live
                     </a>
 
-                            <a href="{{entry.github}}" target="_blank" class=" button button-fill" target="_blank">
+                        <a href="{{entry.data.github}}" target="_blank" class=" button button-fill" target="_blank">
                             GitHub
                     </a>
-                        </div>
                     </div>
                 </div>
-            {% endfor %}
+            </div>
         {% endfor %}
-        <div href="#" class="portfolio-card portfolio-card-6 large-button-container">
+        <div class="portfolio-card portfolio-card-6 large-button-container">
             <a href="https:\\www.github.com\Lucaas27" target="_blank" class="large-button button-fill">
                     View
                     <br>All
