@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
     const output = "public";
 
     eleventyConfig.addPassthroughCopy(`./${input}/assets`);
+    eleventyConfig.addPassthroughCopy(`./${input}/admin`);
     eleventyConfig.addFilter("articleDate", (dateObj) => {
         return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
     });
