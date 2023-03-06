@@ -187,18 +187,18 @@ layout: 'base.njk'
                     </label>
                 </p>
                 <div class="input">
-                    <input type="text" id="name" required>
+                    <input type="text" id="name" name="name" required>
                     <label for="name" class="input-label">Name<span class="required-field">*</span></label>
                 </div>
 
                 <div class="input">
-                    <input type="text" id="email" required>
+                    <input type="text" id="email" name="email" required>
                     <label for="email" class="input-label">Email<span class="required-field">*</span></label>
                 </div>
             </div>
 
             <div class="input">
-                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                <textarea name="message" id="message" cols="30" rows="10" name="message"></textarea>
                 <label for="message" class="input-label">Message<span class="required-field">*</span></label>
             </div>
 

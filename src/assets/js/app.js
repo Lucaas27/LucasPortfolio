@@ -217,8 +217,12 @@ const handleSubmit = (event) => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
     })
-        .then(() => alert("Thank you for your submission"))
+        .then(() => {
+            alert("Thank you for your submission! I'll get in touch soon!");
+            myForm.reset();
+        })// Reset the form fields to their default values
         .catch((error) => alert(error));
+
 };
 
 document
