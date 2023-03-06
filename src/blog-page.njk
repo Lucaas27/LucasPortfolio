@@ -51,7 +51,7 @@ permalink: /articles/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber 
                 </div>
             </div>
             <div class="list-articles">
-                {%- for article in paginatedArticles -%}
+                {% for article in paginatedArticles %}
                     <article class="inner-part " data-category= {{ article.data.tags[1] }}>
                         <div class="articles-card-content">
                             <h3 class="blog-card-title">
@@ -67,31 +67,45 @@ permalink: /articles/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber 
                             <a href="{{ article.url }}" class="button button-fill blog-card-btn">Continue Reading</a>
                         </div>
                     </article>
-                {%- endfor -%}
+                {% endfor %}
                 {% set totalPages = pagination.links.length %}
                 {% set current = pagination.pageNumber + 1 %}
                 {% if totalPages > 1 %}
                     <nav class="posts-nav all" role="navigation" aria-label="pagination">
                         <ul class="posts-nav-container ">
                             <li>
+                                {% if page.url != pagination.href.first %}
+                                    <a href="{{ pagination.href.first }}">1</a>
+                                {% else %}
+                                    <a href="" title="This is the first page" disabled>1</a>
+                                {% endif %}
+                            </li>
+                            <li>
                                 <!-- Previous Page. -->
                                 {% if pagination.href.previous %}
                                     <a class="pagination-previous hoverable" href="{{ pagination.href.previous }}" rel="prev">Prev</a>
                                 {% else %}
-                                    <a class="pagination-previous" title="This is the first page" disabled>Prev</a>
+                                    <a href="" class="pagination-previous" title="This is the previous page" disabled>Prev</a>
                                 {% endif %}
                             </li>
                             <li disabled>
                                 <!-- Indicator Number. -->
                                 <a class="pagination-link" 
-                                    >Page: {{ current }} of {{ totalPages }}</a>
+                                    >{{ current }} of {{ totalPages }}</a>
                             </li>
                             <li>
                                 <!-- Next Page. -->
                                 {% if pagination.href.next %}
-                                    <a class="pagination-next hoverable" href="{{ pagination.href.next }}" rel="next">Next</a>
+                                    <a  class="pagination-next hoverable" href="{{ pagination.href.next }}" rel="next">Next</a>
                                 {% else %}
-                                    <a class="pagination-next" title="This is the last page" disabled>Next</a>
+                                    <a href="" class="pagination-next" title="This is the next page" disabled>Next</a>
+                                {% endif %}
+                            </li>
+                            <li>
+                                {% if page.url != pagination.href.last %}
+                                    <a href="{{ pagination.href.last }}">{{ totalPages }}</a>
+                                {% else %}
+                                    <a href="" title="This is the last page" disabled>{{ totalPages }}</a>
                                 {% endif %}
                             </li>
                         </ul>

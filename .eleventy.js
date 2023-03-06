@@ -19,7 +19,11 @@ module.exports = function (eleventyConfig) {
     });
 
     eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-        return (tags || []).filter(tag => ["all", "articles"].indexOf(tag) === -1);
+        return (tags || []).filter(tag => ["all", "articles", "projects"].indexOf(tag) === -1);
+    });
+    // Returns a collection of blog posts in reverse date order
+    eleventyConfig.addCollection('articles', collection => {
+        return [...collection.getFilteredByGlob('./src/articles/*.md')].reverse();
     });
 
     // Where public facing files will be located and where I'm working from
