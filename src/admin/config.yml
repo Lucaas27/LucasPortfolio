@@ -8,7 +8,7 @@ collections:
   - name: 'articles'
     label: 'Articles'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     folder: 'src/articles'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
@@ -21,7 +21,8 @@ collections:
   - name: 'projects'
     label: 'Projects'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}'
+    identifier_field: name
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     folder: 'src/projects'
     fields:
       - { label: 'Title', name: 'name', widget: 'string' }
