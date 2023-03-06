@@ -6,3 +6,5 @@ My personal portfolio created using Vanilla JavaScript, HTML and CSS.
 It uses the JAMStack architecture and 11ty as the static site generator along with Netlify CMS.
 
 
+
+[Live View](https://lucasgomes.netlify.app)
