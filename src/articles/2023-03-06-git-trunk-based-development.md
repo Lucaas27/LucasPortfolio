@@ -17,3 +17,7 @@ Nowadays, the most popular version control system is definitely Git.
 Put simply, pull requests are requests created by a software developer to combine changes they created with the main project. It includes a process of reviewing those changes. Reviewers can insert comments on every bit they think could be improved, or see as unnecessary.
 
 After receiving feedback, the creator can respond to it, creating a discussion, or simply follow it and change their code accordingly.
+
+![](/assets/images/2023-03-06-23_31_53-git-flow-vs.-trunk-based-development-_-toptal®.png)
+
+Currently, two most popular development styles you can encounter are [Git flow](https://github.com/nvie/gitflow) and [trunk-based development](https://trunkbaseddevelopment.com/).
