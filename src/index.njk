@@ -174,8 +174,18 @@ layout: 'base.njk'
         </div>
     </div>
     <div class="form-container">
-        <form action="" class="contact-form" data-netlify=true name="contact">
+        <form 
+        method="POST" 
+        class="contact-form" 
+        data-netlify=true 
+        name="contact" 
+        netlify-honeypot="bot-field">
             <div class="input-group">
+                <p class="hidden">
+                    <label>
+                    Don’t fill this out if you’re human: <input name="bot-field"/>
+                    </label>
+                </p>
                 <div class="input">
                     <input type="text" id="name" required>
                     <label for="name" class="input-label">Name<span class="required-field">*</span></label>
