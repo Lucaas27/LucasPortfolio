@@ -90,6 +90,10 @@ textarea {
 	cursor: pointer;
 }
 
+.hidden {
+	visibility: hidden;
+}
+
 /*****************!REUSABLE CLASSES *****************/
 .container {
 	max-width: var(--container-width);
