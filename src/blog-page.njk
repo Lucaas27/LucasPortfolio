@@ -51,7 +51,7 @@ permalink: /articles/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber 
                 </div>
             </div>
             <div class="list-articles">
-                {%- for article in paginatedArticles | reverse -%}
+                {%- for article in paginatedArticles -%}
                     <article class="inner-part " data-category= {{ article.data.tags[1] }}>
                         <div class="articles-card-content">
                             <h3 class="blog-card-title">
