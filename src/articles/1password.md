@@ -9,7 +9,6 @@ categories: tools
 description: 1 password basic info
 image: /assets/images/lg-darkbg-1.png
 ---
-
 1Password is a password manager that provides ability to store various passwords, important documents, secure notes and more.
 It supports user-friendly Web interface, as well as macOS, Windows, Linux, iOS, and Android applications.
 But also it has *command line interface*, so it can be in use for any application and system to store secure information.
@@ -26,7 +25,7 @@ With 1Password CLI, you can automate administrative tasks and load secrets strai
 
 ### CLI Installation
 
-Install 1Password-CLI on macOS, Windows or Linux, by following the [official 1password-cli installation docs](https://developer.1password.com/docs/cli/get-started#install).
+Install 1Password-CLIon macOS, Windows or Linux, by following the [official 1password-cli installation docs](https://developer.1password.com/docs/cli/get-started#install).
 
 **Example on Mac OS**:
 
@@ -56,13 +55,13 @@ eval $(op signin)
 
 Most useful commands:
 
-| op command                         | Comment                                      |
-| ---------------------------------- | -------------------------------------------- |
-| `op --help`                        | Get list of all possible commands and flags  |
-| `op account get`                   | Get details about your account               |
-| `op user list`                     | Get list of users                            |
-| `op vault list`                    | Get details for all vaults                   |
-| `op item get <itemName>`           | Get details about an item                    |
+| op command               | Comment                                     |
+| ------------------------ | ------------------------------------------- |
+| `op --help`              | Get list of all possible commands and flags |
+| `op account get`         | Get details about your account              |
+| `op user list`           | Get list of users                           |
+| `op vault list`          | Get details for all vaults                  |
+| `op item get <itemName>` | Get details about an item                   |
 
 ### Environment Variables
 
