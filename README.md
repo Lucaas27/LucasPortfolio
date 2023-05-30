@@ -7,4 +7,4 @@ It uses the JAMStack architecture and 11ty as the static site generator along wi
 
 
 
-## [Live View](https://lucasgomes.netlify.app)
+## [Live View](https://lucasgomes.co.uk)
